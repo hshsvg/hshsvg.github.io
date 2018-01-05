@@ -89,7 +89,10 @@ todo list:
     - [ ] 准备邮轮上需要携带的物品
     - [ ] 浏览日本免税店的物品
     - [x] 购买蓝宝石公主号七月一日的船票
+	-
 
+![pic](http://p22lbw5jx.bkt.clouddn.com/18-1-5/27369476.jpg)
+![pic](http://p22lbw5jx.bkt.clouddn.com/18-1-5/7085477.jpg)
 
 ## 使用流程
 	1. 用rake指令生成一个带框架的.md文件。
