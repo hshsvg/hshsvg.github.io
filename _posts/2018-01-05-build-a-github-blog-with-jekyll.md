@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Build a github blog with jekyll"
-category:
-tags: []
+category: 实用技巧
+tags: [github, jekyll, ruby]
 ---
 
 # 用github和jekyll构建blog系统
