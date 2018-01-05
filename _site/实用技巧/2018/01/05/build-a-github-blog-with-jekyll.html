@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build a github blog with jekyll - 胡希言的博客</title>
+    <meta name="author"  content="胡希言">
+    <meta name="description" content="Build a github blog with jekyll">
+    <meta name="keywords"  content="github, jekyll, ruby">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Build a github blog with jekyll - 胡希言的博客">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/2018/01/05/build-a-github-blog-with-jekyll.html">
+    <meta property="og:description" content="一个小程序员的成长轨迹">
+    <meta property="og:site_name" content="胡希言的博客">
+    <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+</head>
+<body>
+    <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+<input id="nm-switch" type="hidden" value="true">
+
+<header class="g-header">
+    <div class="g-logo">
+      <a href="/"></a>
+    </div>
+    <i id="menu-toggle" class="iconfont icon-menu"></i>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">home</a></li>
+            
+            <li><a href="/tags.html">tags</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+
+<header class="g-banner post-header post-pattern-circuitBoard bgcolor-default post-no-cover" data-theme="default">
+    <div class="post-wrapper">
+        <div class="post-tags">
+            
+            
+            <a href="http://localhost:4000/tags#github" class="post-tag">github</a>
+            
+            <a href="http://localhost:4000/tags#jekyll" class="post-tag">jekyll</a>
+            
+            <a href="http://localhost:4000/tags#ruby" class="post-tag">ruby</a>
+            
+            
+        </div>
+        <h1>Build a github blog with jekyll</h1>
+        <div class="post-meta">
+            <span class="post-meta-item"><i class="iconfont icon-author"></i><a href="http://localhost:4000" target="_blank" rel="author">胡希言</a></></span>
+            <time class="post-meta-item" datetime="18-01-05"><i class="iconfont icon-date"></i>05 Jan 2018</time>
+        </div>
+    </div>
+    
+</header>
+
+<div class="post-content">
+    
+    <article class="markdown-body">
+        <h1 id="用github和jekyll构建blog系统">用github和jekyll构建blog系统</h1>
+
+<h2 id="构建rubyjekyll本地环境">构建ruby,jekyll本地环境</h2>
+
+<blockquote>
+  <p>用来构造一套本地jekyll系统，github其实就是使用了jekyll系统，从而把markdown页面，转化为html页面。新建的系统为离线博客系统，只要最后把生成的md文件推送上去，就完成了发布，所以构造一个和github一样的jekyll系统非常重要。</p>
+</blockquote>
+
+<p>有如下一些步骤：</p>
+<ul>
+  <li>安装ruby，尽量使用高版本的ruby，我们使用的是2.3版本，用源码安装。</li>
+  <li>安装rubygems，用的是2.6版本。运行setup.rb就可以了。</li>
+  <li>用gem install安装jekyll和rake，用rake的目的是为了随后自动生成post的md文件</li>
+</ul>
+
+<p>指令主要有：
+	<code class="highlighter-rouge">PHP
+	gem install jekyll
+	</code></p>
+
+<h2 id="构造vim的-markdown插件">构造vim的 markdown插件</h2>
+
+<blockquote>
+  <p>使用的vim插件主要有语法高亮和预览等插件</p>
+</blockquote>
+
+<ul>
+  <li>首先安装了vundle管理插件，修改.vimrc文件，再安装语法高亮插件
+    <pre><code class="language-PHP">  Plugin 'godlygeek/tabular'
+  Plugin 'plasticboy/vim-markdown'
+</code></pre>
+    <p>紧接运行：（plasticboy/vim-markdown无法如此安装，只能先下载拷贝到bundle目录下)</p>
+    <pre><code class="language-Python">  :PluginInstall
+</code></pre>
+  </li>
+  <li>安装即时查看插件，编辑markdown文件时自动打开chrome浏览。需要nodejs支撑。
+    <pre><code class="language-CSS">  sudo add-apt-repository ppa:chris-lea/node.js
+  sudo apt-get update
+  sudo apt-get install nodejs
+  sudo npm -g install instant-markdown-d
+</code></pre>
+    <p>在vim配置文件中添加,然后再在vim处运行</p>
+    <pre><code class="language-Go">  Plugin 'suan/vim-instant-markdown'
+  :PluginInstall
+</code></pre>
+    <p>完成以后，只要打开一个markdown文件，就会弹出一个chrome窗口提供预览。</p>
+  </li>
+</ul>
+
+<h2 id="github支持">github支持</h2>
+<ul class="task-list">
+  <li>github生成一个username.github.io的代码仓库。</li>
+  <li>在本地生成加密相关文件
+    <pre><code class="language-Go">  ssh-keygen -t rsa -C "youremail"
+</code></pre>
+    <p>在.ssh目录下会生成 id_rsa，和id_rsa.pub</p>
+  </li>
+  <li>在github个人设置处，新建一个ssh key，把id_rsa.pub的内容拷贝进去。</li>
+  <li>在本地设置git的账户信息
+    <pre><code class="language-C-like">  git config --global user.name "username"
+  git config --global user.email "youremail"
+</code></pre>
+    <h2 id="其他的工具">其他的工具</h2>
+    <p>注册七牛，获 取图床，再利用极简图床的chrome插件，来上传图片，并生成图片的url
+todo list:
+<code class="highlighter-rouge">- []</code> the first
+<code class="highlighter-rouge">- [x]</code> the second</p>
+  </li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Cmd Markdown 开发</strong>
+    <ul class="task-list">
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />改进 Cmd 渲染算法，使用局部渲染技术提高渲染效率</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />支持以 PDF 格式导出文稿</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />新增Todo列表功能 <a href="https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments">语法参考</a></li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />改进 LaTex 功能
+        <ul class="task-list">
+          <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />修复 LaTex 公式渲染问题</li>
+          <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />新增 LaTex 公式编号功能 <a href="http://docs.mathjax.org/en/latest/tex.html#tex-eq-numbers">语法参考</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>七月旅行准备</strong>
+    <ul class="task-list">
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />准备邮轮上需要携带的物品</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />浏览日本免税店的物品</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />购买蓝宝石公主号七月一日的船票
+  -</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="http://p22lbw5jx.bkt.clouddn.com/18-1-5/27369476.jpg" alt="pic" />
+<img src="http://p22lbw5jx.bkt.clouddn.com/18-1-5/7085477.jpg" alt="pic" /></p>
+
+<h2 id="使用流程">使用流程</h2>
+ 	* 用rake 指令生成一个带框架的.md文件。
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* 用vim编辑该markdown文件，同时用chrome浏览。
+* 用git命令推送到github上去。
+</code></pre></div></div>
+
+
+    </article>
+    
+    <div class="social-share-wrapper">
+        <div class="social-share"></div>
+    </div>
+    
+</div>
+
+<section class="author-detail">
+    <section class="post-footer-item author-card">
+        <div class="avatar">
+            <img src="http://localhost:4000/assets/img/benny.jpg" alt="">
+        </div>
+        <div class="author-name" rel="author">胡希言</div>
+        <div class="bio">
+            <p>一个小程序员</p>
+        </div>
+        
+        <ul class="sns-links">
+            
+            <li>
+                <a href="//weibo.com/huxiyan" target="_blank">
+                    <i class="iconfont icon-weibo"></i>
+                </a>
+            </li>
+            
+            <li>
+                <a href="//juejin.im/user/huxiyan" target="_blank">
+                    <i class="iconfont icon-juejin"></i>
+                </a>
+            </li>
+            
+            <li>
+                <a href="//www.instagram.com/hshsvg" target="_blank">
+                    <i class="iconfont icon-instagram"></i>
+                </a>
+            </li>
+            
+            <li>
+                <a href="//github.com/hshsvg" target="_blank">
+                    <i class="iconfont icon-github"></i>
+                </a>
+            </li>
+            
+        </ul>
+        
+    </section>
+    <section class="post-footer-item read-next">
+        
+        <div class="read-next-item">
+            <a href="/%E5%85%B6%E4%BB%96/2018/01/05/test-chinese-system.html" class="read-next-link"></a>
+            <section>
+                <span>测试中文系统</span>
+                <p>测试中文系统</p>
+            </section>
+            
+        </div>
+        
+        
+    </section>
+    
+</section>
+
+<footer class="g-footer">
+    <section>胡希言的博客 © 2018</section>
+    <section>Powered by <a href="//jekyllrb.com">Jekyll</a> | <a href="https://github.com/kaeyleo/jekyll-theme-H2O">Theme H2O</a></section>
+</footer>
+
+<script src="/assets/js/social-share.min.js"></script>
+<script>
+    socialShare('.social-share', {
+        sites: ['wechat','weibo','douban','twitter'],
+        wechatQrcodeTitle: "分享到微信朋友圈",
+        wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+</script>
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+/*写入自己的disqus信息*/
+s.src = 'https://liaokeyu.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+<script src="/assets/js/prism.js"></script>
+<script src="/assets/js/index.min.js"></script>
+</body>
+</html>

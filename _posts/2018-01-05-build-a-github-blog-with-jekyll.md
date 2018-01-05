@@ -17,19 +17,9 @@ tags: [github, jekyll, ruby]
 * 用gem install安装jekyll和rake，用rake的目的是为了随后自动生成post的md文件
 
 指令主要有：
-```
-	curl ruby-****.tar.gz 
-	tar -zxvf ruby-****.tar.gz
-	cd ruby-****
-	make
-	sudo make install
-
-	cd rubygems
-	ruby setup.rb
-
-	gem install rake
+	```PHP
 	gem install jekyll
-```
+	```
 
 
 ## 构造vim的 markdown插件
@@ -37,44 +27,43 @@ tags: [github, jekyll, ruby]
 > 使用的vim插件主要有语法高亮和预览等插件
 
 * 首先安装了vundle管理插件，修改.vimrc文件，再安装语法高亮插件
-	```
+	```PHP
 	Plugin 'godlygeek/tabular'
 	Plugin 'plasticboy/vim-markdown'
 	```
 	紧接运行：（plasticboy/vim-markdown无法如此安装，只能先下载拷贝到bundle目录下)
-	```
+	```Python
 	:PluginInstall
 	```
 * 安装即时查看插件，编辑markdown文件时自动打开chrome浏览。需要nodejs支撑。
-	```
+	```CSS
 	sudo add-apt-repository ppa:chris-lea/node.js
 	sudo apt-get update
 	sudo apt-get install nodejs
 	sudo npm -g install instant-markdown-d
 	```
 	在vim配置文件中添加,然后再在vim处运行
-	```
+	```Go
 	Plugin 'suan/vim-instant-markdown'
 	:PluginInstall
 	```
 完成以后，只要打开一个markdown文件，就会弹出一个chrome窗口提供预览。
-
+    
 ## github支持
-* 在
 * github生成一个username.github.io的代码仓库。
 * 在本地生成加密相关文件
-	```
+	```Go
 	ssh-keygen -t rsa -C "youremail"
 	```
 	在.ssh目录下会生成 id_rsa，和id_rsa.pub
 * 在github个人设置处，新建一个ssh key，把id_rsa.pub的内容拷贝进去。
 * 在本地设置git的账户信息
-	```
+	```C-like
 	git config --global user.name "username"
 	git config --global user.email "youremail"
-	```
+	``` 
 ## 其他的工具
-注册七牛，获取图床，再利用极简图床的chrome插件，来上传图片，并生成图片的url
+注册七牛，获 取图床，再利用极简图床的chrome插件，来上传图片，并生成图片的url
 todo list:
 `- []` the first
 `- [x]` the second
@@ -93,9 +82,9 @@ todo list:
 
 ![pic](http://p22lbw5jx.bkt.clouddn.com/18-1-5/27369476.jpg)
 ![pic](http://p22lbw5jx.bkt.clouddn.com/18-1-5/7085477.jpg)
-
+  
 ## 使用流程
-	1. 用rake指令生成一个带框架的.md文件。
-	2. 用vim编辑该markdown文件，同时用chrome浏览。
-	3. 用git命令推送到github上去。
+ 	* 用rake 指令生成一个带框架的.md文件。
+	* 用vim编辑该markdown文件，同时用chrome浏览。
+	* 用git命令推送到github上去。
 
