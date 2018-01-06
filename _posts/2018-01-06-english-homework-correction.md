@@ -12,7 +12,7 @@ tags: []
 * __taste + adj.__
 
   ~~I taste it good.~~
-  This apple taste good.
+  This apple tastes good.
 
 * __specialize in...__
 
