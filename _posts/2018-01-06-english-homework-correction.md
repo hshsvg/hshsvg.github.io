@@ -2,7 +2,7 @@
 layout: post
 title: "English homework correction, 英语纠错 2018-01-07"
 category: homework
-tags: []
+tags: [homework, English]
 ---
 
 # 英语作业纠错
@@ -10,9 +10,13 @@ tags: []
 ## make sentences
 
 * __taste + adj.__
+  
+  > taste 在这里用做系动词, 后面跟的是形容词, 用做表语. 
 
   ~~I taste it good.~~
+  
   This apple tastes good.
+
 
 * __specialize in...__
 
@@ -33,8 +37,8 @@ tags: []
 * __at the back__
 
   There are many many money at the back.
-  > 这句话里面有两个错误,一个是money是不可数名词,另一个是*at the back*和*at the bank*不一样.
-  There are a lot of money at the bank.
+  > 这句话里面有两个错误, 一个是money是不可数名词, 另一个是*at the back*和*at the bank*不一样.
+  There are a lot of money at the bank. 银行里有很多钱.
 
   There is a high mountain at the back of the house. 房屋背后一个座高山.
 
@@ -126,7 +130,7 @@ tags: []
 
   They did not find her until the next day. 直到次日, 他们才找到他. 找到不是连续动词, 是一刹那的行为.
 
-  The kept looking for her until the next day. 他们一直找啊找啊, 直到次日. 这里的找是连续性动词.
+  They kept looking for her until the next day. 他们一直找啊找啊, 直到次日. 这里的找是连续性动词.
 
 ## End
 
