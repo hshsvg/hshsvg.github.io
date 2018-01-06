@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 摆花 
+title: "摆花" 
 category: noip
-tags[noip, 信息竞赛]
+tags: [noip, 信息竞赛]
 ---
 
 # 摆花
