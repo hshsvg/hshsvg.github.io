@@ -50,7 +50,7 @@ tags: [homework, English]
 
   The rich ~~lives~~ ***live*** in luxurious surroundings. 富人住在豪华区.
 
-  > 这里主要实说the rich是指一类人, 即富人. 同样我们可以用the poor来指穷人. 两个都是复数名词. 
+  > 这里主要是说the rich是指一类人, 即富人. 同样我们可以用the poor来指穷人. 两个都是复数名词. 
 
 * __carry__
 
@@ -77,7 +77,7 @@ tags: [homework, English]
 
   > 注意这个仅仅是一个短语,不是一个句子,一个句子中至少有一个谓语动词.
 
-  Chengdu foreign languages school is a residential school.
+  Chengdu foreign languages school is a residential school. 成外是个寄宿学校
 
 * __change__
  
@@ -109,7 +109,7 @@ tags: [homework, English]
 
   > 这句话是错的, 有两种修改办法,主要考的是被动语态,一定要分清主动语态和被动语态.
 
-  * They are playing bridge now. The will finish soon. 他们正在打桥牌,他们很快会结束.
+  * They are playing bridge now. They will finish soon. 他们正在打桥牌,他们很快会结束.
   * They are playing bridge now. The game will be finished soon.他们正在打桥牌,游戏很快会结束.
     
 * __feel + adj.__
