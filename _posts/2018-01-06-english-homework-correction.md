@@ -20,11 +20,11 @@ tags: [homework, English]
 
 * __specialize in...__
 
-  Many students specialize in medicine. 很多学生专攻医
+  Many students specialize in medicine. 很多学生专攻医学.
 
 * __adj. + enough for sb.__
 
-  The classroom is big enough for many students.
+  The classroom is big enough for many students. 这个教室对很多学生也足够大了.
 
 * __million__
 
@@ -48,7 +48,9 @@ tags: [homework, English]
 
 * __the rich__
 
-  The rich ~~lives~~ ***live*** in luxurious surroundings.
+  The rich ~~lives~~ ***live*** in luxurious surroundings. 富人住在豪华区.
+
+  > 这里主要实说the rich是指一类人, 即富人. 同样我们可以用the poor来指穷人. 两个都是复数名词. 
 
 * __carry__
 
@@ -79,7 +81,7 @@ tags: [homework, English]
 
 * __change__
  
-  I change the desert into (***a***) farmland.
+  I change the desert into (***a***) farmland. 我把沙漠变成了农田.
 
 * __look forward to__ 
 
