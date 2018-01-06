@@ -30,10 +30,11 @@ flower.in
 3 2
 
 flower.out
+
 2
 
 ## 分析
-
+ 
 a[i]表示第i种花最多使用的盆数
 f[i][j]表示前i种花，摆j盆的摆放方案数。对于第i种花可以使用0、1、2...a[i]盆,对应的前i-1种花摆放的盆数为j-0、j-1、j-2、...j-a[i] 
 即f[i][j]=f[i-1][j]+f[i-1][j-1]+f[i-1][j-2]+...+f[i-1][j-a[i]] =f[i-1][j-k](0<=k<=a[i],j>=k)
@@ -67,7 +68,7 @@ f[2][3]=f[1][1]+f[1][2]+f[1][3]
 f[2][4]=f[1][2]+f[1][3]+f[1][2])
 
 
-```C-like
+```Java
 #include <iostream>
 #include <cstdio>
 
@@ -94,7 +95,7 @@ int main()
 		for (int j = 1; j <= m; j++ )
 			for (int k = 0; (k <= a[i]) && (j >= k); k++)
 				f[i][j] += f[i-1][j-k];
-	
+	            f[i][j] %= 1000007;
 	cout << f[n][m] << endl;
 	
 	return 0;
