@@ -12,15 +12,13 @@ tags: computer IT
 
 ## download 下载
 
-```Java
 wget http://download.teamviewer.com/download/version_10x/teamviewer_i386.deb --no-check-certificate
 
-```
+
 ## install 安装
 
-```Java
 sudo dpkg -i teamviewer_10.0.46203_i386.deb
-```
+
 如果显示dpkg没有安装,就用sudo apt-get install dpkg 安装即可
 这里需要输入密码
 输入密码后即可完成安装
