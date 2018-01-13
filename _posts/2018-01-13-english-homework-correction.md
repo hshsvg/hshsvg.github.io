@@ -86,6 +86,37 @@ tags: English homework correction
 
 ### Please choose the proper one to complete the dialogue.
 
+## Fill in the blanks according to the text you've learnt in Look Ahead.
+
+* Richard Gere
+  > 这个做的非常好,基本都对了就是一个TV presenter. 电视主持人,这个地方你拼成present了
+
+* In Britain
+  > 54应该是envelope,信封. 55 office. 56 newsagent's 或者newsagent 59 butcher或者butcher's  60 61 department store.
+
+* It is a
+  >64 opposite to,  71 bedroom 不是badroom
+
+* Most British
+  > 74 person应该好一些
 
 
 
+## Choose the proper forms of the words in the chart to fill in the blanks.
+```Java
+minute, something, decide, think, come, mean, turn, get, one, importance, shout, right
+```
+
+Mr Smith asks John <u> come </u> to the front of the class room and gives him a lot of questions, but John can't answer any of them. Mr Smith then makes a <u>decision </u> to ask him some very easy questions so that he can get a few <u>thoughts</u>.
+
+"What is Milan?" he says.
+
+Jone thinks for a few seconds and the answers, "A famous singer, Sir."
+
+"No, it's a large and <u>important</u> town in Italy." Mr Smith says. He <u>gets</u> a little angry now, but he is trying not to show it. Then he asks, "Who was the first President of the USA?"
+
+John thinks for a few <u>minutes</u>, but doesn't say <u>anything</u>. Then Mr Smith gets very angry and <u>shouts</u>, "George Washington!" John stands up and <u>turns</u> back to walk to his seat.
+
+"Come back!"Mr Smith says."I didn't tell you to go."
+
+"Oh, I am sorry,"John says,"I thought you called the next student."
