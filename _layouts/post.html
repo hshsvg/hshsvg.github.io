@@ -44,6 +44,24 @@
     {% endif %}
 </div>
 
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+const gitment = new Gitment({
+  owner: 'hshsvg',
+  repo: 'hshsvg.github.io',
+  oauth: {
+    client_id: 'a4c5b8e12841392baf88',
+    client_secret: 'c675076a11f43a55bc0574d5c5c5c0b81d8f020b',
+  },
+  // ...
+  // For more available options, check out the documentation below
+})
+
+gitment.render('gitmentContainer');
+</script>
+
 <section class="author-detail">
     <section class="post-footer-item author-card">
         <div class="avatar">
