@@ -44,51 +44,6 @@
     {% endif %}
 </div>
 
-<div id="container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	
-const myTheme = {
-  render(state, instance) {
-    const container = document.createElement('div')
-    container.lang = "en-US"
-    container.className = 'gitment-container gitment-root-container'
-    
-     // your custom component
-    container.appendChild(instance.renderSomething(state, instance))
-    
-    container.appendChild(instance.renderHeader(state, instance))
-    container.appendChild(instance.renderEditor(state, instance))
-    container.appendChild(instance.renderComments(state, instance))
-    container.appendChild(instance.renderFooter(state, instance))
-    return container
-  },
-  renderSomething(state, instance) {
-    const container = document.createElement('div')
-    container.lang = "en-US"
-    if (state.user.login) {
-      container.innerText = `Hello, ${state.user.login}`
-    }
-    return container
-  }
-}
-
-  const gitment = new Gitment({
-  owner: 'hshsvg',
-  repo: 'hshsvg.github.io',
-  theme: myTheme,
-  oauth: {
-    client_id: 'a4c5b8e12841392baf88',
-    client_secret: 'c675076a11f43a55bc0574d5c5c5c0b81d8f020b',
-  },
-  // ...
-  // For more available options, check out the documentation below
-})
-
-gitment.render('container');
-</script>
-
 <section class="author-detail">
     <section class="post-footer-item author-card">
         <div class="avatar">
@@ -139,6 +94,51 @@ gitment.render('container');
         {% endif %}
     </section>
 </section>
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+	
+const myTheme = {
+  render(state, instance) {
+    const container = document.createElement('div')
+    container.lang = "en-US"
+    container.className = 'gitment-container gitment-root-container'
+    
+     // your custom component
+    container.appendChild(instance.renderSomething(state, instance))
+    
+    container.appendChild(instance.renderHeader(state, instance))
+    container.appendChild(instance.renderEditor(state, instance))
+    container.appendChild(instance.renderComments(state, instance))
+    container.appendChild(instance.renderFooter(state, instance))
+    return container
+  },
+  renderSomething(state, instance) {
+    const container = document.createElement('div')
+    container.lang = "en-US"
+    if (state.user.login) {
+      container.innerText = `Hello, ${state.user.login}`
+    }
+    return container
+  }
+}
+
+  const gitment = new Gitment({
+  owner: 'hshsvg',
+  repo: 'hshsvg.github.io',
+  theme: myTheme,
+  oauth: {
+    client_id: 'a4c5b8e12841392baf88',
+    client_secret: 'c675076a11f43a55bc0574d5c5c5c0b81d8f020b',
+  },
+  // ...
+  // For more available options, check out the documentation below
+})
+
+gitment.render('container');
+</script>
+
 
 {% include footer.html %}
 
