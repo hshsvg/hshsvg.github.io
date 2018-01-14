@@ -10,12 +10,12 @@ tags: topic English
 
 # Topics
 
-1. Introduce a hotel or a hostel.
+1. [Introduce a hotel or a hostel.](http://hxy.cool/2018/01/14/introduce-a-hotel-or-a-hostel.html)
 2. What would you like in your flat?
 3. Talk about your leisure activities.
 4. Talk about your bedroom or sitting room.
 5. [Do you want to live on a houseboat?](http://hxy.cool/topic/2018/01/11/do-you-want-to-live-on-a-houseboat.html)
-6. Houses in China
+6. [Houses in China](http://hxy.cool/homework/2018/01/14/houses-in-china.html)
 7. Introduce one of your relatives.
 8. What musical instrument do you like to play, why?
 9. Talk about a birthday party you enjoyed.
